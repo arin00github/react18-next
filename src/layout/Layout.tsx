@@ -8,8 +8,9 @@ type menuProps = {
 
 const InitialMenu: menuProps[] = [
   { title: "home", path: "/" },
-  { title: "menu1", path: "/menu1" },
+  { title: "deploymacy", path: "/deploymacy/1" },
   { title: "menu2", path: "/menu2" },
+  { title: "Recoil", path: "/recoil" },
 ];
 
 type LayoutProps = {
@@ -30,7 +31,7 @@ export const Layout = ({ children }: LayoutProps) => {
           })}
         </div>
         <div style={{ width: "calc(100% - 240px)", marginLeft: "240px" }}>
-          {children}
+          <div className="pl-6 pr-6">{children}</div>
         </div>
       </div>
     </main>

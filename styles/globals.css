@@ -2,3 +2,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.custom-table th {
+  @apply h-10 leading-10 text-center;
+}
+
+.pagination button {
+  @apply w-6 h-6 text-center rounded-full bg-sky-500;
+}
