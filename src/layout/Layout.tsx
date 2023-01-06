@@ -1,5 +1,6 @@
 import Link from "next/link";
-import React, { ReactNode } from "react";
+import React, { ReactNode, Suspense } from "react";
+import { LoadingModal } from "../component/modal/loading";
 
 type menuProps = {
   title: string;
@@ -31,7 +32,9 @@ export const Layout = ({ children }: LayoutProps) => {
           })}
         </div>
         <div style={{ width: "calc(100% - 240px)", marginLeft: "240px" }}>
-          <div className="pl-6 pr-6">{children}</div>
+          <Suspense fallback={<LoadingModal />}>
+            <div className="pl-6 pr-6">{children}</div>
+          </Suspense>
         </div>
       </div>
     </main>

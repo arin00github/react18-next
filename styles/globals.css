@@ -10,3 +10,7 @@
 .pagination button {
   @apply w-6 h-6 text-center rounded-full bg-sky-500;
 }
+
+.btn {
+  @apply p-2 rounded-sm bg-sky-800 text-white;
+}
