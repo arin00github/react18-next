@@ -1,11 +1,10 @@
+import axios from "axios";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-
 import { MutiForm } from "../../src/component/mutiform/MutilForm";
-//import TimeoutComponent from "../../src/component/TimeoutComponent";
 import { ToggleComponent } from "../../src/component/Toggle";
 import { useLocalStorage } from "../../src/hook/useLocalStorage";
 
-const Menu2Index = ({
+const CustomIndex = ({
   personInfo,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   console.log("personInfo", personInfo);
@@ -30,7 +29,7 @@ const Menu2Index = ({
           className="btn"
           onClick={() => setState(Math.floor(Math.random() * 10000))}
         >
-          Change State
+          Change State in LocalStorage
         </button>
       </div>
     </div>
@@ -40,7 +39,7 @@ const Menu2Index = ({
 export const getStaticProps: GetStaticProps<{
   personInfo: { name: string };
 }> = async (context) => {
-  const res = await fetch(`${process.env.BASE_URL}/api/menu2`);
+  const res = await fetch(`${process.env.BASE_URL}/api/custom`);
 
   const personInfo = await res.json();
 
@@ -51,4 +50,4 @@ export const getStaticProps: GetStaticProps<{
   };
 };
 
-export default Menu2Index;
+export default CustomIndex;

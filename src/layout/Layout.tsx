@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React, { ReactNode, Suspense } from "react";
 import { LoadingModal } from "../component/modal/loading";
+import useClock from "../hook/useClock";
 
 type menuProps = {
   title: string;
@@ -10,7 +11,8 @@ type menuProps = {
 const InitialMenu: menuProps[] = [
   { title: "home", path: "/" },
   { title: "deploymacy", path: "/deploymacy/1" },
-  { title: "menu2", path: "/menu2" },
+  { title: "custom", path: "/custom" },
+  { title: "react-query", path: "/reactquery" },
   { title: "Recoil", path: "/recoil" },
 ];
 
@@ -19,10 +21,14 @@ type LayoutProps = {
 };
 
 export const Layout = ({ children }: LayoutProps) => {
+  const { timeString } = useClock();
   return (
     <main>
       <div className="w-screen">
         <div className="w-60 h-screen fixed top-0 left-0 bg-sky-500">
+          <div>
+            <p>{timeString}</p>
+          </div>
           {InitialMenu.map((menu) => {
             return (
               <div key={`menu-${menu.title}`}>
