@@ -14,3 +14,7 @@
 .btn {
   @apply p-2 rounded-sm bg-sky-800 text-white;
 }
+
+input {
+  @apply border border-black border-solid;
+}
