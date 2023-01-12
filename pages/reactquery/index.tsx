@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useQuery } from "react-query";
+import { PageTitle } from "../../src/layout/PageTitle";
 
 type PostData = {
   body: string;
@@ -21,7 +22,7 @@ const ReactQueryIndex = () => {
 
   return (
     <div>
-      <h1>React Query</h1>
+      <PageTitle>React Query</PageTitle>
 
       <div>
         {data &&

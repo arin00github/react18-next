@@ -1,6 +1,7 @@
 import React from "react";
 import { atom } from "recoil";
 import { CharacterCounter } from "../../src/component/CaractorCounter";
+import { PageTitle } from "../../src/layout/PageTitle";
 
 const textState = atom({
   key: "textState", // unique ID (with respect to other atoms/selectors)
@@ -11,7 +12,7 @@ const ReocoilIndexPage = () => {
   return (
     <div>
       <div>
-        <h1 className="text-xl mb-2">Recoil</h1>
+        <PageTitle>Recoil</PageTitle>
         <CharacterCounter />
       </div>
     </div>

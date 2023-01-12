@@ -14,6 +14,7 @@ const InitialMenu: menuProps[] = [
   { title: "custom", path: "/custom" },
   { title: "react-query", path: "/reactquery" },
   { title: "Recoil", path: "/recoil" },
+  { title: "Subject", path: "/subject" },
 ];
 
 type LayoutProps = {
@@ -31,7 +32,10 @@ export const Layout = ({ children }: LayoutProps) => {
           </div>
           {InitialMenu.map((menu) => {
             return (
-              <div key={`menu-${menu.title}`}>
+              <div
+                className="w-100 h-10 leading-10 text-center cursor-pointer text-white"
+                key={`menu-${menu.title}`}
+              >
                 <Link href={menu.path}>{menu.title}</Link>
               </div>
             );

@@ -3,6 +3,7 @@ import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { MutiForm } from "../../src/component/mutiform/MutilForm";
 import { ToggleComponent } from "../../src/component/Toggle";
 import { useLocalStorage } from "../../src/hook/useLocalStorage";
+import { PageTitle } from "../../src/layout/PageTitle";
 
 const CustomIndex = ({
   personInfo,
@@ -13,7 +14,7 @@ const CustomIndex = ({
 
   return (
     <div>
-      <h1>custom hook</h1>
+      <PageTitle>Custom Hook</PageTitle>
       <div className="mb-10">
         <ToggleComponent />
       </div>

@@ -6,6 +6,7 @@ import { CustomTable, Pagination } from "../../src/component/table";
 import { IDeplomacyList, IResultCode } from "../../types/deplomacy-interface";
 import { ITableColumn } from "../../types/table-inteface";
 import usePagination from "../../src/hook/usePagination";
+import { PageTitle } from "../../src/layout/PageTitle";
 
 const countryColumns: ITableColumn<IDeplomacyList>[] = [
   { access: "country_nm", header: "국가명", sortable: false, width: "10%" },
@@ -45,6 +46,7 @@ const Menu1Index = ({
 
   return (
     <div>
+      <PageTitle>Deplomatic Table Data</PageTitle>
       <CustomTable
         columns={countryColumns}
         data={list.data}
